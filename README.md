@@ -15,3 +15,9 @@
 
 
 ![image](https://github.com/user-attachments/assets/9236865a-f1f7-4c19-b003-a42b992e5d1f)
+
+
+
+추가 기능 구현 예정
+- 예상 생산 값 및 판매가격 설정기능 추가
+- 위 기능추가로 인한 총 수익비용과 수익률 계산기능 추가
