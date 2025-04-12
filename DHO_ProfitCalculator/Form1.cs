@@ -15,8 +15,6 @@ namespace DHO_ProfitCalculator
             buttonCalculateOrders.Click += buttonCalculate_Click;
             buttonCalculateMaterials.Click += buttonCalculateMaterials_Click;
             buttonCalculateTotal.Click += buttonCalculateTotal_Click;
-
-
         }
 
         private void buttonCalculate_Click(object? sender, EventArgs e)

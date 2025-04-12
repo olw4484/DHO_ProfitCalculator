@@ -500,7 +500,7 @@
             Controls.Add(textBox1);
             Controls.Add(buttonCalculateOrders);
             Name = "Form1";
-            Text = "Form1";
+            Text = "DHO 발주서 및 생산 비용 계산기";
             ResumeLayout(false);
             PerformLayout();
         }
