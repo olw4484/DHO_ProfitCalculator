@@ -15,6 +15,7 @@ namespace DHO_ProfitCalculator
             buttonCalculateOrders.Click += buttonCalculate_Click;
             buttonCalculateMaterials.Click += buttonCalculateMaterials_Click;
             buttonCalculateTotal.Click += buttonCalculateTotal_Click;
+            buttonCalculateProductSales.Click += buttonCalculateProductSales_Click;
         }
 
         private void buttonCalculate_Click(object? sender, EventArgs e)
@@ -115,10 +116,68 @@ namespace DHO_ProfitCalculator
             }
             else if (e.KeyCode == Keys.F4)
             {
+                // F3: 재료값 계산
+                buttonCalculateProductSales_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.F5)
+            {
                 // F4: 비용 계산
                 buttonCalculateTotal_Click(sender, e);
             }
         }
+        private void buttonCalculateProductSales_Click(object? sender, EventArgs e)
+        {
+            try
+            {
+                // 재료 사용량
+                double material1Used = string.IsNullOrWhiteSpace(textBox3.Text) ? 0 : Convert.ToDouble(textBox3.Text);
+                double material2Used = string.IsNullOrWhiteSpace(textBox7.Text) ? 0 : Convert.ToDouble(textBox7.Text);
+                double material3Used = string.IsNullOrWhiteSpace(textBox11.Text) ? 0 : Convert.ToDouble(textBox11.Text);
 
+                // 필요한 재료 수
+                double requiredMaterial1 = string.IsNullOrWhiteSpace(textBox17.Text) ? 1 : Convert.ToDouble(textBox17.Text);
+                double requiredMaterial2 = string.IsNullOrWhiteSpace(textBox18.Text) ? 1 : Convert.ToDouble(textBox18.Text);
+                double requiredMaterial3 = string.IsNullOrWhiteSpace(textBox19.Text) ? 1 : Convert.ToDouble(textBox19.Text);
+
+                // 필요 수량이 0인 경우 방지
+                if (requiredMaterial1 <= 0 || requiredMaterial2 <= 0 || (checkBoxUseMaterial3.Checked && requiredMaterial3 <= 0))
+                {
+                    MessageBox.Show("필요 재료 수량은 0보다 커야 합니다!", "입력 오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 예상 생성 개수 계산
+                double count1 = requiredMaterial1 / material1Used;
+                double count2 = requiredMaterial2 / material2Used;
+                double count3 = checkBoxUseMaterial3.Checked ? requiredMaterial3/ material3Used : double.MaxValue;
+
+                int estimatedProducts = (int)Math.Floor(Math.Min(count1, Math.Min(count2, count3)));
+
+                // 대성공 시뮬레이션
+                Random random = new Random();
+                int successCount = 0;
+                for (int i = 0; i < estimatedProducts; i++)
+                {
+                    if (random.NextDouble() <= 0.2)
+                    {
+                        successCount++;
+                    }
+                }
+
+                int totalProducts = estimatedProducts + successCount;
+
+                // 예상 수익 계산
+                double pricePerProduct = string.IsNullOrWhiteSpace(textBox26.Text) ? 0 : Convert.ToDouble(textBox26.Text);
+                double totalRevenue = totalProducts * pricePerProduct; // 예상 수익만
+
+                // 결과 출력
+                textBox15.Text = totalProducts.ToString();     // 대성공 포함된 총 생산 갯수
+                textBox27.Text = totalRevenue.ToString("F2");  // 예상 총 수익
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("올바른 값을 입력해주세요!", "입력 오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -74,13 +74,27 @@
             label22 = new Label();
             buttonCalculateMaterials = new Button();
             buttonCalculateTotal = new Button();
+            label23 = new Label();
+            label24 = new Label();
+            textBox3 = new TextBox();
+            textBox7 = new TextBox();
+            label25 = new Label();
+            label26 = new Label();
+            label27 = new Label();
+            textBox11 = new TextBox();
+            buttonCalculateProductSales = new Button();
+            textBox15 = new TextBox();
+            textBox26 = new TextBox();
+            label28 = new Label();
+            textBox27 = new TextBox();
+            checkBoxUseMaterial3 = new CheckBox();
             SuspendLayout();
             // 
             // buttonCalculateOrders
             // 
-            buttonCalculateOrders.Location = new Point(467, 361);
+            buttonCalculateOrders.Location = new Point(615, 278);
             buttonCalculateOrders.Name = "buttonCalculateOrders";
-            buttonCalculateOrders.Size = new Size(100, 77);
+            buttonCalculateOrders.Size = new Size(79, 77);
             buttonCalculateOrders.TabIndex = 0;
             buttonCalculateOrders.Text = "발주서 값 계산하기(F2)";
             buttonCalculateOrders.UseVisualStyleBackColor = true;
@@ -432,27 +446,155 @@
             // 
             // buttonCalculateMaterials
             // 
-            buttonCalculateMaterials.Location = new Point(573, 360);
+            buttonCalculateMaterials.Location = new Point(615, 361);
             buttonCalculateMaterials.Name = "buttonCalculateMaterials";
-            buttonCalculateMaterials.Size = new Size(100, 77);
+            buttonCalculateMaterials.Size = new Size(79, 77);
             buttonCalculateMaterials.TabIndex = 48;
             buttonCalculateMaterials.Text = "재료값 계산하기(F3)";
             buttonCalculateMaterials.UseVisualStyleBackColor = true;
             // 
             // buttonCalculateTotal
             // 
-            buttonCalculateTotal.Location = new Point(679, 360);
+            buttonCalculateTotal.Location = new Point(700, 360);
             buttonCalculateTotal.Name = "buttonCalculateTotal";
-            buttonCalculateTotal.Size = new Size(100, 77);
+            buttonCalculateTotal.Size = new Size(79, 77);
             buttonCalculateTotal.TabIndex = 49;
-            buttonCalculateTotal.Text = "총 비용 계산하기(F4)";
+            buttonCalculateTotal.Text = "총 비용 계산하기(F5)";
             buttonCalculateTotal.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(23, 389);
+            label23.Name = "label23";
+            label23.Size = new Size(109, 20);
+            label23.TabIndex = 50;
+            label23.Text = "예상 생성 갯수";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(23, 417);
+            label24.Name = "label24";
+            label24.Size = new Size(74, 20);
+            label24.TabIndex = 51;
+            label24.Text = "판매 금액";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(179, 282);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 27);
+            textBox3.TabIndex = 52;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(179, 315);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(100, 27);
+            textBox7.TabIndex = 53;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(21, 287);
+            label25.Name = "label25";
+            label25.Size = new Size(152, 20);
+            label25.TabIndex = 54;
+            label25.Text = "1번째 재료 소모 갯수";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(21, 318);
+            label26.Name = "label26";
+            label26.Size = new Size(152, 20);
+            label26.TabIndex = 55;
+            label26.Text = "2번째 재료 소모 갯수";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(23, 351);
+            label27.Name = "label27";
+            label27.Size = new Size(152, 20);
+            label27.TabIndex = 56;
+            label27.Text = "3번째 재료 소모 갯수";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(179, 348);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(100, 27);
+            textBox11.TabIndex = 57;
+            // 
+            // buttonCalculateProductSales
+            // 
+            buttonCalculateProductSales.Location = new Point(700, 278);
+            buttonCalculateProductSales.Name = "buttonCalculateProductSales";
+            buttonCalculateProductSales.Size = new Size(79, 76);
+            buttonCalculateProductSales.TabIndex = 58;
+            buttonCalculateProductSales.Text = "예상 생산 갯수(F4)";
+            buttonCalculateProductSales.UseVisualStyleBackColor = true;
+            // 
+            // textBox15
+            // 
+            textBox15.Location = new Point(138, 381);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(100, 27);
+            textBox15.TabIndex = 59;
+            // 
+            // textBox26
+            // 
+            textBox26.Location = new Point(138, 414);
+            textBox26.Name = "textBox26";
+            textBox26.Size = new Size(100, 27);
+            textBox26.TabIndex = 60;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(244, 384);
+            label28.Name = "label28";
+            label28.Size = new Size(94, 20);
+            label28.TabIndex = 61;
+            label28.Text = "예상 총 수익";
+            // 
+            // textBox27
+            // 
+            textBox27.Location = new Point(344, 381);
+            textBox27.Name = "textBox27";
+            textBox27.Size = new Size(100, 27);
+            textBox27.TabIndex = 62;
+            // 
+            // checkBoxUseMaterial3
+            // 
+            checkBoxUseMaterial3.AutoSize = true;
+            checkBoxUseMaterial3.Location = new Point(12, 256);
+            checkBoxUseMaterial3.Name = "checkBoxUseMaterial3";
+            checkBoxUseMaterial3.Size = new Size(15, 14);
+            checkBoxUseMaterial3.TabIndex = 63;
+            checkBoxUseMaterial3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBoxUseMaterial3);
+            Controls.Add(textBox27);
+            Controls.Add(label28);
+            Controls.Add(textBox26);
+            Controls.Add(textBox15);
+            Controls.Add(buttonCalculateProductSales);
+            Controls.Add(textBox11);
+            Controls.Add(label27);
+            Controls.Add(label26);
+            Controls.Add(label25);
+            Controls.Add(textBox7);
+            Controls.Add(textBox3);
+            Controls.Add(label24);
+            Controls.Add(label23);
             Controls.Add(buttonCalculateTotal);
             Controls.Add(buttonCalculateMaterials);
             Controls.Add(label22);
@@ -553,5 +695,19 @@
         private Label label22;
         private Button buttonCalculateMaterials;
         private Button buttonCalculateTotal;
+        private Label label23;
+        private Label label24;
+        private TextBox textBox3;
+        private TextBox textBox7;
+        private Label label25;
+        private Label label26;
+        private Label label27;
+        private TextBox textBox11;
+        private Button buttonCalculateProductSales;
+        private TextBox textBox15;
+        private TextBox textBox26;
+        private Label label28;
+        private TextBox textBox27;
+        private CheckBox checkBoxUseMaterial3;
     }
 }
